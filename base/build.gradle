@@ -1,0 +1,54 @@
+import javax.xml.stream.events.Namespace
+
+apply plugin: 'com.android.library'
+apply from: '../common.gradle'
+
+android {
+//    namespace "com.vcom.base"
+    defaultConfig {
+        // 模块混淆配置
+        consumerProguardFiles 'proguard-base.pro'
+    }
+
+    sourceSets {
+        main {
+            // res 资源目录配置
+            res.srcDirs(
+                    'src/main/res',
+                    'src/main/res-sw',
+            )
+        }
+    }
+}
+
+dependencies {
+    annotationProcessor rootProject.ext.dependencies.compiler
+    implementation rootProject.ext.dependencies.okhttp
+    implementation rootProject.ext.dependencies.brvh
+    implementation rootProject.ext.dependencies.lifecycle
+    implementation rootProject.ext.dependencies.EasyHttp
+    implementation rootProject.ext.dependencies.okhttp
+    implementation rootProject.ext.dependencies.constraint
+    implementation rootProject.ext.dependencies.recyclerview
+    implementation rootProject.ext.dependencies.cardview
+    implementation rootProject.ext.dependencies.appcompat
+    implementation rootProject.ext.dependencies.XXPermissions
+    implementation rootProject.ext.dependencies.TitleBar
+    implementation rootProject.ext.dependencies.ToastUtils
+    implementation rootProject.ext.dependencies.gson
+    implementation rootProject.ext.dependencies.GsonFactory
+    implementation rootProject.ext.dependencies.ShapeView
+    implementation rootProject.ext.dependencies.glide
+    implementation rootProject.ext.dependencies.immersionbar
+    implementation rootProject.ext.dependencies.PhotoView
+    implementation rootProject.ext.dependencies.crashreport
+    implementation rootProject.ext.dependencies.nativecrashreport
+    implementation rootProject.ext.dependencies.lottie
+    implementation rootProject.ext.dependencies.refreshl
+    implementation rootProject.ext.dependencies.refreshh
+    implementation rootProject.ext.dependencies.timber
+    implementation rootProject.ext.dependencies.circleindicator
+    implementation rootProject.ext.dependencies.mmkv
+//    implementation rootProject.ext.dependencies.leakcanary
+    implementation rootProject.ext.dependencies.zxingcore
+}
